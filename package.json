@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/roysland/laravel-mix-riot4",
   "keywords": [
     "laravel",
     "mix",
@@ -16,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "@riotjs/compiler": "^4.9.2",
-    "@riotjs/webpack-loader": "^4.0.3",
+    "@riotjs/webpack-loader": "^4.0.3"
   },
   "dependencies": {
     "riot": "^4.13.2"
