@@ -73,3 +73,27 @@ You can then use
 ```html
 <my-component></my-component>
 ```
+Currently looking for a way to opt in for scss-preprocessing in components. Right now, you can add this to the loader in the package
+```javascript
+const compiler = require('@riotjs/compiler')
+const sass = require('sass')
+
+compiler.registerPreprocessor('css', 'scss', function(code, { options }) {
+    const { file } = options;
+  
+    console.log('Compile the sass code in', file);
+  
+    const result = sass.renderSync({
+        file,
+        data: code
+    });
+  
+    return {
+        code: result.css.toString(),
+        map: null
+    };
+});
+```
+
+Styling in components should be ```<style type="text/scss">...</style>```
+It will render as inline styles
